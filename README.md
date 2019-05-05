@@ -9,5 +9,6 @@ Double click on number textbox to show the secret textbox above it.
 | ------------- | ------------- |
 | file  | Simple file manager using c#  |
 | cpu | CPU scheduling algorithms|
+| thread | Simple using of threads with progress bar|
 |process| show, kill and lunch windows processes|
 | memory | Memory alocation algorithms  |
