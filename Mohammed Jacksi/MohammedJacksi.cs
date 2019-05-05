@@ -183,6 +183,8 @@ namespace Mohammed_Jacksi
                     processes.ShowDialog();
                     break;
                 case "memory":
+                    Memory memory = new Memory();
+                    memory.ShowDialog();
                     break;
                 default:
                     break;

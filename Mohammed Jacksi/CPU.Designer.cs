@@ -81,7 +81,6 @@
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(123, 24);
             this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Round Robin";
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
@@ -93,7 +92,6 @@
             this.priorityRadioButton.Name = "priorityRadioButton";
             this.priorityRadioButton.Size = new System.Drawing.Size(80, 24);
             this.priorityRadioButton.TabIndex = 2;
-            this.priorityRadioButton.TabStop = true;
             this.priorityRadioButton.Text = "Priority";
             this.priorityRadioButton.UseVisualStyleBackColor = true;
             this.priorityRadioButton.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
@@ -105,7 +103,6 @@
             this.sjfRadioButton.Name = "sjfRadioButton";
             this.sjfRadioButton.Size = new System.Drawing.Size(57, 24);
             this.sjfRadioButton.TabIndex = 1;
-            this.sjfRadioButton.TabStop = true;
             this.sjfRadioButton.Text = "SJF";
             this.sjfRadioButton.UseVisualStyleBackColor = true;
             this.sjfRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
@@ -113,6 +110,7 @@
             // fcfsRadioButton
             // 
             this.fcfsRadioButton.AutoSize = true;
+            this.fcfsRadioButton.Checked = true;
             this.fcfsRadioButton.Location = new System.Drawing.Point(18, 31);
             this.fcfsRadioButton.Name = "fcfsRadioButton";
             this.fcfsRadioButton.Size = new System.Drawing.Size(70, 24);
