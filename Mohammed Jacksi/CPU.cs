@@ -172,7 +172,7 @@ namespace Mohammed_Jacksi
 
         void prior()
         {
-            String s = "";
+
             int[] burst = getBurstTimeWithPriority();
             int[] wt = new int[burst.Length];
             // waiting time for first process is 0 

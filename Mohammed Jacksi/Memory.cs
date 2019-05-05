@@ -41,7 +41,6 @@ namespace Mohammed_Jacksi
         }
         void firstFit()
         {
-            
             int[] processes = getProcesses();
             int[] blockes = getBlocks();
             String[] allocation = new String[processes.Length];
@@ -75,15 +74,93 @@ namespace Mohammed_Jacksi
 
         void bestFit()
         {
+            int[] processes = getProcesses();
+            int[] blockes = getBlocks();
+            String[] blockes_names = new string[blockes.Length];
+            for (int i = 0; i < blockes_names.Length; i++)
+                blockes_names[i] = "" + (i + 1);
+            
 
+            String[] allocation = new String[processes.Length];
+            for (int i = 0; i < processes.Length; i++)
+            {
+                Array.Sort(blockes, blockes_names);
+                bool found = false;
+                int process = processes[i];
+                for (int j = 0; j < blockes.Length; j++)
+                {
+                    int block = blockes[j];
+
+                    if (process <= block)
+                    {
+                        blockes[j] = block - process;
+                        allocation[i] = (i + 1) + " - " + blockes_names[j];
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                    allocation[i] = (i + 1) + " - Not Allocated";
+            }
+
+
+            String show = "";
+            for (int i = 0; i < allocation.Length; i++)
+            {
+                show += allocation[i] + "\n";
+            }
+            MessageBox.Show("P - Block\n" + show);
         }
 
+        void worstFit()
+        {
+            int[] processes = getProcesses();
+            int[] blockes = getBlocks();
+            String[] blockes_names = new string[blockes.Length];
+            for (int i = 0; i < blockes_names.Length; i++)
+                blockes_names[i] = "" + (i + 1);
+
+
+            String[] allocation = new String[processes.Length];
+            for (int i = 0; i < processes.Length; i++)
+            {
+                Array.Sort(blockes, blockes_names);
+                Array.Reverse(blockes);
+                Array.Reverse(blockes_names);
+                bool found = false;
+                int process = processes[i];
+                for (int j = 0; j < blockes.Length; j++)
+                {
+                    int block = blockes[j];
+
+                    if (process <= block)
+                    {
+                        blockes[j] = block - process;
+                        allocation[i] = (i + 1) + " - " + blockes_names[j];
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                    allocation[i] = (i + 1) + " - Not Allocated";
+            }
+
+
+            String show = "";
+            for (int i = 0; i < allocation.Length; i++)
+            {
+                show += allocation[i] + "\n";
+            }
+            MessageBox.Show("P - Block\n" + show);
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             if (firstFitRadioButton.Checked)
                 firstFit();
             else if (bestFitRadioButton.Checked)
                 bestFit();
+            else
+                worstFit();
                 
         }
 
